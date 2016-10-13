@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.medical.patient.view.account.activity.AccountDetailsActivity">
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_below="@+id/status_bar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/pager_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:text="个人详情"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:background="@drawable/bg_main_item">
+
+                <RelativeLayout
+                    android:id="@+id/layout_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <ImageView
+                        android:id="@+id/account_avatar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_toLeftOf="@+id/iv_more_1"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_avator"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="头像"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_avatar"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_a"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_a3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:textColor="@color/grey_800"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_a3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="姓名"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_name"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_b"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text="男"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="性别"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_b1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_gender"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_b1"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_2_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_2_1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="年龄"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_age"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_c"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_birth_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_4"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="出生日期"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/bg_main_item">
+
+                <RelativeLayout
+                    android:id="@+id/layout_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机号"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_phone"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_d"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="邮箱"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_email"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_e"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_profession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_7"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="职业"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_profession"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_f"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+
+                    <TextView
+                        android:id="@+id/account_address_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="住址"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/account_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center|right"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_8"
+                        android:layout_toRightOf="@+id/account_address_label"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/bg_main_item">
+
+                <RelativeLayout
+                    android:id="@+id/layout_hospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/ahlib_more"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:id="@+id/account_hospital_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="所在医院"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/account_hospital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center|right"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_toRightOf="@+id/account_hospital_label"
+                        android:layout_toLeftOf="@+id/iv_more_9"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_g"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_hospital"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_ruyuan_department"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_g"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/ahlib_more"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:id="@+id/account_ruyuan_department_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="入院科室"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/account_ruyuan_department"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center|right"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_10"
+                        android:layout_toRightOf="@+id/account_ruyuan_department_label"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_h"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_ruyuan_department"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_ruyuan_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_h"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_ruyuan_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_11"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="入院日期"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_i"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_ruyuan_date"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_ruyuan_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_i"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="住院号"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/account_ruyuan_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_12"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_j"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_ruyuan_number"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_zhuguan_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_j"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_zhuguan_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_13"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="主管医生"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_k"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_zhuguan_doctor"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_zhuzhi_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_k"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/ahlib_more"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:id="@+id/account_zhuzhi_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_14"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="主治医生"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line_l"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.25"
+                    android:background="@color/grey_200"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:layout_below="@+id/layout_zhuzhi_doctor"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_zhuguan_nurser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_line_l"
+                    android:padding="@dimen/dimen_5">
+
+                    <ImageView
+                        android:id="@+id/iv_more_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:src="@mipmap/ahlib_more"/>
+
+                    <TextView
+                        android:id="@+id/account_zhuguan_nurser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/account_textview_height"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_10"
+                        android:layout_toLeftOf="@+id/iv_more_15"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="主管护士"
+                        android:textSize="@dimen/patient_info_font"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/sigout_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="退出当前账号"
+                android:textSize="@dimen/dimen_16"
+                android:textColor="@color/white"
+                android:layout_margin="@dimen/dimen_16"
+                android:padding="@dimen/dimen_10"
+                android:background="@drawable/button_signout" />
+        </LinearLayout>
+        
+
+        
+    </ScrollView>
+
+
+
+</LinearLayout>

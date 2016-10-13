@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "com.medical.patient"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:gridlayout-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.android.support:cardview-v7:24.2.1'
+    // 底部导航
+    compile 'com.github.armcha:SpaceNavigationView:1.3.2'
+    // 轮播图
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    // 广播文字
+    compile 'hanks.xyz:htextview-library:0.1.5'
+    // http
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    // gson
+    compile 'com.google.code.gson:gson:2.3.1'
+    // 对话框
+    compile 'me.drakeet.materialdialog:library:1.3.1'
+    // 仍旧是对话框
+    compile 'com.afollestad.material-dialogs:core:0.9.0.1'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
+    // material edittext
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    // 日期 时间
+    compile 'com.wdullaer:materialdatetimepicker:2.5.0'
+    // tag
+    compile 'me.gujun.android.taggroup:library:1.4@aar'
+    // material 图标
+    compile 'net.steamcrafted:materialiconlib:1.0.8'
+    // text expand
+    compile 'com.ms-square:expandableTextView:0.1.4'
+    // text displays fill the screen width without extra blanks in the end of line.
+    // compile 'me.biubiubiu.justifytext:library:1.1'
+    // 扁平化UI
+    compile 'com.github.eluleci:flatui:3.0.0'
+    // snackbar
+    compile 'com.nispok:snackbar:2.11.+'
+    //im
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.orhanobut:logger:1.4'
+    compile 'cn.bmob.android:bmob-im:2.0.5@aar'
+    compile 'cn.bmob.android:bmob-sdk:3.4.7-aar'
+    compile files('libs/universal-image-loader-1.9.5.jar')
+}

@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".view.home.fragment.MyDocter.AddDoctorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/add_doc_txt_ssyy"
+            android:padding="10dp"
+            android:text="所属医院"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/add_doc_spinner_ssyy"
+            android:padding="7dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/toolbar"
+            android:layout_toRightOf="@+id/add_doc_txt_ssyy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+
+        <TextView
+            android:id="@+id/add_doc_txt_ssks"
+            android:padding="10dp"
+            android:text="所属科室"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/add_doc_txt_ssyy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/add_doc_spinner_ssks"
+            android:padding="7dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/add_doc_txt_ssks"
+            android:layout_below="@+id/add_doc_spinner_ssyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/add_doc_txt_doctor_name"
+            android:padding="10dp"
+            android:text="医生姓名"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/add_doc_txt_ssks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/add_doc_edit_txt_doctor_name"
+            android:padding="10dp"
+
+           android:layout_below="@+id/add_doc_spinner_ssks"
+            android:layout_toLeftOf="@+id/btn_commit"
+            android:layout_toRightOf="@+id/add_doc_txt_doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_commit"
+            android:text="提交"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/add_doc_spinner_ssks"/>
+        <View
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@color/grey_300"
+            android:id="@+id/add_doc_slip_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/add_doc_txt_doctor_name"/>
+
+        <ListView
+            android:id="@+id/add_doc_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/add_doc_slip_line"
+            android:layout_alignParentBottom="true">
+
+        </ListView>
+    </RelativeLayout>
+
+</FrameLayout>

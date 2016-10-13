@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:flatui="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.medical.patient.view.home.activity.PatientJiuzhenInfoActivity">
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_below="@+id/status_bar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/pager_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:maxLines="1"
+            android:text="患者就诊信息" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layout_gender"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_gender"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="性别" />
+
+                    <View
+                        android:id="@+id/v_line_1"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_gender" />
+
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:layout_toRightOf="@id/v_line_1"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal|center_vertical">
+
+                        <com.cengalabs.flatui.views.FlatRadioButton
+                            android:id="@+id/gender_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/jiuzhen_text_ly_height"
+                            android:layout_gravity="center_vertical"
+                            android:background="#0000"
+                            android:checked="true"
+                            android:text="男"
+                            android:layout_margin="5dp"
+                            flatui:fl_size="20dip"
+                            flatui:fl_dotMargin="1dp" />
+
+                        <com.cengalabs.flatui.views.FlatRadioButton
+                            android:id="@+id/gender_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/jiuzhen_text_ly_height"
+                            android:layout_gravity="center_vertical"
+                            android:text="女"
+                            android:background="#0000"
+                            android:layout_margin="5dp"
+                            flatui:fl_size="20dip"
+                            flatui:fl_dotMargin="1dp" />
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_height"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="身高" />
+
+                    <View
+                        android:id="@+id/v_line_2"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_height" />
+
+                    <EditText
+                        android:id="@+id/height"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:hint="输入您的升高(CM)"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_2" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_weight"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_weight"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="体重" />
+
+                    <View
+                        android:id="@+id/v_line_3"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_weight" />
+
+                    <EditText
+                        android:id="@+id/weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:hint="输入您的体重(KG)"
+                        android:inputType="number"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_3" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_blood_type"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_blood_type"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="血型" />
+
+                    <View
+                        android:id="@+id/v_line_4"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_blood_type" />
+
+                    <TextView
+                        android:id="@+id/blood_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_4" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layout_marriage"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_marriage"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="婚姻状况" />
+
+                    <View
+                        android:id="@+id/v_line_5"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_marriage" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:layout_toRightOf="@id/v_line_5"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal|center_vertical">
+
+                        <com.cengalabs.flatui.views.FlatRadioButton
+                            android:id="@+id/marriage_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/jiuzhen_text_ly_height"
+                            android:layout_gravity="center_vertical"
+                            android:background="#0000"
+                            android:checked="true"
+                            android:text="未婚"
+                            android:layout_margin="5dp"
+                            flatui:fl_size="20dip"
+                            flatui:fl_dotMargin="1dp" />
+
+                        <com.cengalabs.flatui.views.FlatRadioButton
+                            android:id="@+id/marriage_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/jiuzhen_text_ly_height"
+                            android:layout_gravity="center_vertical"
+                            android:text="已婚"
+                            android:background="#0000"
+                            android:layout_margin="5dp"
+                            flatui:fl_size="20dip"
+                            flatui:fl_dotMargin="1dp" />
+
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_education"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_education"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="文化程度" />
+
+                    <View
+                        android:id="@+id/v_line_6"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_education" />
+
+                    <TextView
+                        android:id="@+id/education"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_6" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_profession"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_profession"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="职业" />
+
+                    <View
+                        android:id="@+id/v_line_7"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_profession" />
+
+
+                    <EditText
+                        android:id="@+id/profession"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:hint="输入您的职业"
+                        android:inputType="text"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_7" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_monthly_income"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_monthly_income"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="月收入(选填)" />
+
+                    <View
+                        android:id="@+id/v_line_8"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_monthly_income" />
+
+                    <TextView
+                        android:id="@+id/monthly_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_8" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_yibao"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_yibao"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="医保" />
+
+                    <View
+                        android:id="@+id/v_line_9"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_yibao" />
+
+                    <TextView
+                        android:id="@+id/yibao"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_9" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layout_smoking"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_smoking"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="吸烟" />
+
+                    <View
+                        android:id="@+id/v_line_10"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_smoking" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:layout_toRightOf="@id/v_line_10"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <TextView
+                            android:id="@+id/smoking"
+                            android:layout_width="36dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="否"
+                            android:textSize="16sp"/>
+
+                        <com.cengalabs.flatui.views.FlatToggleButton
+                            android:id="@+id/smoking_btn"
+                            android:layout_width="72dp"
+                            android:layout_height="36dp"
+                            android:checked="false"
+                            flatui:fl_space="14dp"
+                            flatui:fl_cornerRadius="18dp"
+                            android:layout_toRightOf="@+id/smoking"
+                            android:layout_marginLeft="@dimen/dimen_10" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_drinking"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_drinking"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="饮酒" />
+
+                    <View
+                        android:id="@+id/v_line_12"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_drinking" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:layout_toRightOf="@id/v_line_12"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <TextView
+                            android:id="@+id/drinking"
+                            android:layout_width="36dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:textColor="@color/grey_700"
+                            android:text="否"
+                            android:textSize="16sp"/>
+
+                        <com.cengalabs.flatui.views.FlatToggleButton
+                            android:id="@+id/drinking_btn"
+                            android:layout_width="72dp"
+                            android:layout_height="36dp"
+                            android:checked="false"
+                            flatui:fl_space="14dp"
+                            flatui:fl_cornerRadius="18dp"
+                            android:layout_toRightOf="@+id/drinking"
+                            android:layout_marginLeft="@dimen/dimen_10" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_exercise"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_exercise"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="体育锻炼" />
+
+                    <View
+                        android:id="@+id/v_line_13"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_exercise" />
+
+                    <TextView
+                        android:id="@+id/exercise"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_13" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_diet"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_diet"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="膳食习惯" />
+
+                    <View
+                        android:id="@+id/v_line_14"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_diet" />
+
+                    <TextView
+                        android:id="@+id/diet"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_14" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layout_guominshi"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_guominshi"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="过敏史" />
+
+                    <View
+                        android:id="@+id/v_line_15"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_guominshi" />
+
+                    <TextView
+                        android:id="@+id/guominshi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_jiazushi"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_jiazushi"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="家族史" />
+
+                    <View
+                        android:id="@+id/v_line_16"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_jiazushi" />
+
+                    <TextView
+                        android:id="@+id/jiazushi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_16" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_jiwangshi"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_jiwangshi"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="既往史" />
+
+                    <View
+                        android:id="@+id/v_line_17"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_jiwangshi" />
+
+                    <TextView
+                        android:id="@+id/jiwangshi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_17" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_hebingzheng"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_hebingzheng"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="合并症" />
+
+                    <View
+                        android:id="@+id/v_line_18"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_hebingzheng" />
+
+                    <TextView
+                        android:id="@+id/hebingzheng"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_18" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_bingfazheng"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_bingfazheng"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="并发症" />
+
+                    <View
+                        android:id="@+id/v_line_19"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_bingfazheng" />
+
+                    <TextView
+                        android:id="@+id/bingfazheng"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_19" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layout_ruyuan_zhenduan"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_ruyuan_zhenduan"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="入院诊断" />
+
+                    <View
+                        android:id="@+id/v_line_20"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_ruyuan_zhenduan" />
+
+                    <TextView
+                        android:id="@+id/ruyuan_zhenduan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_20" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_jibing_type"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_jibing_type"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="疾病分类" />
+
+                    <View
+                        android:id="@+id/v_line_21"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_jibing_type" />
+
+                    <TextView
+                        android:id="@+id/jibing_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_21" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_0.5"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_jibing_fenqi"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/jiuzhen_text_ly_height">
+
+                    <TextView
+                        android:id="@+id/tv_jibing_fenqi"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/jiuzhen_text_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="@dimen/jiuzhen_text_label_width_lager"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:text="疾病分级(期)" />
+
+                    <View
+                        android:id="@+id/v_line_22"
+                        android:background="@color/grey_300"
+                        android:layout_width="@dimen/line_size_0.5"
+                        android:layout_height="35.0dp"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tv_jibing_fenqi" />
+
+                    <TextView
+                        android:id="@+id/jibing_fenqi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/jiuzhen_text_ly_height"
+                        android:textSize="@dimen/jiuzhen_text_size"
+                        android:textColor="@color/grey_700"
+                        android:text=""
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dimen_16"
+                        android:layout_toRightOf="@id/v_line_22" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下一步"
+                android:textSize="@dimen/dimen_18"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_20"
+                android:padding="@dimen/dimen_10"
+                android:background="@drawable/button_login"/>
+
+        </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

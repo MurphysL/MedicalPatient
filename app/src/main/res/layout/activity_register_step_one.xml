@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.account.activity.RegisterStepOneActivity">
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_below="@+id/status_bar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/pager_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:maxLines="1"
+            android:text="填写手机号" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_input_height"
+        android:background="@drawable/bg_main_item">
+
+        <TextView
+            android:id="@+id/text_86"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dimen_10"
+            android:text="+86 >"
+            android:textSize="@dimen/dimen_16"/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0.5dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/text_86"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginRight="@dimen/dimen_10"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@color/my_blue"/>
+
+        <ImageView
+            android:id="@+id/register_phone_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/login_input_height"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/mplib_input_delete_btn"/>
+
+        <EditText
+            android:id="@+id/register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:layout_toRightOf="@+id/line1"
+            android:layout_toLeftOf="@+id/register_phone_delete"
+            android:hint="请输入手机号"
+            android:textSize="@dimen/dimen_16"
+            android:inputType="phone"
+            android:textColor="@color/grey_800"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/register_step_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下一步"
+        android:textSize="@dimen/dimen_18"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="@dimen/dimen_20"
+        android:padding="@dimen/dimen_10"
+        android:background="@drawable/button_login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='点击"下一步"按钮，即表示您同意：'
+        android:layout_gravity="center"
+        android:textSize="@dimen/dimen_14"
+        android:textColor="@color/grey_600"/>
+
+    <TextView
+        android:id="@+id/register_protocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:text="《软件许可及服务协议》"
+        android:layout_gravity="center"
+        android:textSize="@dimen/dimen_14"
+        android:textColor="@color/my_blue"/>
+</LinearLayout>

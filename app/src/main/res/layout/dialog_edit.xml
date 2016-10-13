@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        http://blog.csdn.net/u013252213/article/details/48713727
+        met_baseColor  修改输入的字体颜色
+        met_primaryColor 修改输入框的颜色
+        met_floatingLabel EditText输入时,hint内容将缩小位移到输入框上方
+        met_errorColor 设置警告色
+        met_hideUnderline 删除默认下划线
+    -->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edittext"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/font_16"
+        android:textColor="@color/my_blue"
+        android:hint=""
+        app:met_baseColor="@color/my_blue"
+        app:met_primaryColor="@color/colorPrimary"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelTextColor="@color/grey_700"
+        app:met_floatingLabelText=""
+        app:met_errorColor="@color/colorAccent"
+        app:met_autoValidate="true"
+        app:met_maxCharacters="11"/>
+</LinearLayout>
